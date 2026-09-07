@@ -1,0 +1,136 @@
+[
+  {
+    "id": "p01_onehome",
+    "type": "CAROUSEL",
+    "caption": "One home, quietly handled. A little guide to where every arre lives \u2014 and what it takes off your mind. On your wrist, on the door, in the room, by the bed. Four quiet pieces, one calm home. Start with one. Link in bio.\n\n#arre #arrehome #smarthomesimplified #calmhome #matter",
+    "publish_at_utc": "2026-09-07T22:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p01_onehome_1.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p01_onehome_2.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p01_onehome_3.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p01_onehome_4.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p01_onehome_5.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p01_onehome_6.jpg"
+    ],
+    "status": "DONE",
+    "permalink": "https://www.instagram.com/p/DdAUZCMGyrO/"
+  },
+  {
+    "id": "p02_contact_door",
+    "type": "IMAGE",
+    "caption": "The last thing you check before you leave \u2014 handled. arre's contact sensor knows the moment your door opens, and disappears into the frame while it's at it. Peace of mind, automatically.\n\n#arre #arrehome #peaceofmind #homesecurity #calmhome #matter",
+    "publish_at_utc": "2026-09-09T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p02_contact_door_1.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p03_card",
+    "type": "IMAGE",
+    "caption": "The card I can't forget, because it's on my wrist. One tap and my whole profile is on their phone \u2014 no app, nothing to charge. Stealth or Pure, $24.99 once.\n\n#arre #arrehome #digitalbusinesscard #nfc #networking",
+    "publish_at_utc": "2026-09-11T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p03_card_1.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p04_temp",
+    "type": "IMAGE",
+    "caption": "The nursery, kept just right \u2014 without you getting up. Temperature, humidity and air pressure, sensed continuously; when the room drifts, it acts on its own. Rest easy.\n\n#arre #arrehome #newparents #nursery #homecomfort #matter",
+    "publish_at_utc": "2026-09-14T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p04_temp_1.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p05_manifesto",
+    "type": "CAROUSEL",
+    "caption": "A quiet manifesto. The smartest home isn't the one with the most apps \u2014 it's the one you forget is smart. No beeps, no blinking, nothing to babysit. arre is built to disappear: to sense, to act, and never ask for the credit. The best interface is none. Link in bio.\n\n#arre #arrehome #smarthomesimplified #calmhome #minimalhome #matter",
+    "publish_at_utc": "2026-09-16T22:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p05_manifesto_1.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p05_manifesto_2.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p05_manifesto_3.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p05_manifesto_4.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p05_manifesto_5.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p06_contact_kitchen",
+    "type": "IMAGE",
+    "caption": "Even the fridge. Left ajar after the groceries? You'll know. arre's sensor goes anywhere a door does \u2014 quiet, tiny, certified Matter.\n\n#arre #arrehome #smarthome #peaceofmind #homegadgets #matter",
+    "publish_at_utc": "2026-09-18T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p06_contact_kitchen_1.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p07_goodnight",
+    "type": "IMAGE",
+    "caption": "The goodnight I don't have to do. One press by the bed, and the house settles for the night. No app, no fuss \u2014 just a tap.\n\n#arre #arrehome #smarthome #smarthomesimplified #minimalhome",
+    "publish_at_utc": "2026-09-21T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p07_goodnight_1.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p08_nfc_desk",
+    "type": "IMAGE",
+    "caption": "Stealth mode. Your card, on your wrist \u2014 one tap and your whole profile is on their phone. No app, nothing to charge. $24.99, once.\n\n#arre #arrehome #digitalbusinesscard #nfc #networking #entrepreneurlife",
+    "publish_at_utc": "2026-09-23T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p08_nfc_desk_1.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p09_calmcosts",
+    "type": "CAROUSEL",
+    "caption": "What calm actually costs. Most 'smart' homes never stop charging \u2014 a subscription, a fee per user, a hub you didn't ask for. arre is $24.99, once. No subscription, no hub, no app fees. Peace of mind, paid once. Link in bio.\n\n#arre #arrehome #smarthomesimplified #matter #nosubscription",
+    "publish_at_utc": "2026-09-25T22:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p09_calmcosts_1.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p09_calmcosts_2.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p09_calmcosts_3.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p09_calmcosts_4.jpg",
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p09_calmcosts_5.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p10_nfc_entry",
+    "type": "IMAGE",
+    "caption": "Keys, sunglasses, and the only business card you'll ever need. On your way out, on your wrist. One tap to share you.\n\n#arre #arrehome #digitalbusinesscard #nfc #networking #onthego",
+    "publish_at_utc": "2026-09-28T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p10_nfc_entry_1.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p11_thesis",
+    "type": "IMAGE",
+    "caption": "Nothing beeped. Nothing blinked. It just took care of itself. That's the whole idea.\n\n#arre #arrehome #calmhome #smarthomesimplified #designlovers",
+    "publish_at_utc": "2026-09-30T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p11_thesis_1.jpg"
+    ],
+    "status": "PENDING"
+  },
+  {
+    "id": "p12_button",
+    "type": "IMAGE",
+    "caption": "Goodnight, in one press. The lights, the doors, the whole house \u2014 settled for the night, without reaching for your phone.\n\n#arre #arrehome #smarthomesimplified #calmhome #minimalhome",
+    "publish_at_utc": "2026-10-02T16:00:00Z",
+    "image_urls": [
+      "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p12_button_1.jpg"
+    ],
+    "status": "PENDING"
+  }
+]
