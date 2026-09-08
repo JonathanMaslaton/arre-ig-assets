@@ -1,0 +1,25 @@
+name: arre-ig-autopost
+on:
+  schedule:
+    - cron: '0 * * * *'   # hourly (UTC); publishes the earliest due post
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Publish due post
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+        run: python publish_rest.py
+      - name: Commit state
+        run: |
+          git config user.name "arre-bot"
+          git config user.email "bot@arre.local"
+          git add schedule.json
+          git commit -m "state: publish run $(date -u +%FT%TZ)" || echo "no changes"
+          git push || echo "nothing to push"
