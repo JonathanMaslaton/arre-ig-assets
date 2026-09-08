@@ -27,9 +27,16 @@ def connected_account():
     if not items:
         raise SystemExit("No Instagram connected account in this Composio project. "
                          "Connect @arrehomellc or use the correct COMPOSIO_API_KEY.")
-    # prefer ACTIVE
-    items.sort(key=lambda x: 0 if str(x.get("status","")).upper()=="ACTIVE" else 1)
-    return items[0]["id"]
+    active = [x for x in items if str(x.get("status","")).upper()=="ACTIVE"] or items
+    # pick the account whose own IG profile username == arrehomellc
+    for x in active:
+        cid = x["id"]
+        ok, d, raw = execute("INSTAGRAM_GET_USER_INFO", cid, {"ig_user_id": "me"})
+        dd = d.get("data", d) if isinstance(d, dict) else {}
+        if (dd or {}).get("username") == GUARD_USERNAME:
+            print("matched connected account", cid, "->", GUARD_USERNAME)
+            return cid
+    raise SystemExit(f"None of the {len(active)} Instagram connected accounts is {GUARD_USERNAME}.")
 
 def execute(slug, cid, args):
     st, b = api("POST", f"/api/v3/tools/execute/{slug}",
