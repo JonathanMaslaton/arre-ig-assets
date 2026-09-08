@@ -35,6 +35,16 @@ def guard():
 
 def publish_item(it):
     caption, urls = it["caption"], it["image_urls"]
+    if it["type"] == "STORY":
+        ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA",
+                           {"ig_user_id": IG_USER_ID, "media_type": "STORIES", "image_url": urls[0]})
+        if not ok: raise RuntimeError(f"story container: {str(raw)[:300]}")
+        creation = d.get("id")
+        time.sleep(5)
+        ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
+                           {"ig_user_id": IG_USER_ID, "creation_id": creation})
+        if not ok: raise RuntimeError(f"story publish: {str(raw)[:300]}")
+        return d.get("id"), None
     if it["type"] == "IMAGE":
         ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA",
                            {"ig_user_id": IG_USER_ID, "image_url": urls[0], "caption": caption})
