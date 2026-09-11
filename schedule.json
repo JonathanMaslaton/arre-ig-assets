@@ -34,7 +34,8 @@
     "image_urls": [
       "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p03_card_1.jpg"
     ],
-    "status": "PENDING"
+    "status": "DONE",
+    "media_id": "18440561125120900"
   },
   {
     "id": "p04_temp",
