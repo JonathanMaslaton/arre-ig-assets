@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""arre IG cloud auto-poster (Composio REST v3, no CLI).
+"""arre IG cloud auto-poster (Composio REST v3).
 Publishes the earliest PENDING item in schedule.json whose publish_at_utc has passed.
 Account-guarded to @arrehomellc. Secret env: COMPOSIO_API_KEY."""
 import json, os, sys, time, datetime, urllib.request
@@ -18,7 +18,7 @@ def execute(slug, args):
         data=json.dumps(body).encode(), method="POST",
         headers={"x-api-key": KEY, "Content-Type": "application/json"})
     try:
-        r = urllib.request.urlopen(req, timeout=180); b = json.load(r)
+        b = json.load(urllib.request.urlopen(req, timeout=180))
     except urllib.error.HTTPError as e:
         try: b = json.loads(e.read())
         except Exception: b = {"successful": False}
@@ -33,42 +33,29 @@ def guard():
         raise SystemExit(f"ACCOUNT GUARD FAILED: {str(raw)[:300]}")
     print("guard ok ->", d.get("username"))
 
+def container(args):
+    ok, d, raw = execute("INSTAGRAM_CREATE_MEDIA_CONTAINER", args)
+    if not ok: raise RuntimeError(f"container: {str(raw)[:300]}")
+    return d.get("id")
+
+def post(creation_id):
+    time.sleep(5)
+    ok, d, raw = execute("INSTAGRAM_CREATE_POST", {"ig_user_id": IG_USER_ID, "creation_id": creation_id})
+    if not ok: raise RuntimeError(f"publish: {str(raw)[:300]}")
+    return d.get("id")
+
 def publish_item(it):
     caption, urls = it["caption"], it["image_urls"]
     if it["type"] == "STORY":
-        ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA",
-                           {"ig_user_id": IG_USER_ID, "media_type": "STORIES", "image_url": urls[0]})
-        if not ok: raise RuntimeError(f"story container: {str(raw)[:300]}")
-        creation = d.get("id")
-        time.sleep(5)
-        ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
-                           {"ig_user_id": IG_USER_ID, "creation_id": creation})
-        if not ok: raise RuntimeError(f"story publish: {str(raw)[:300]}")
-        return d.get("id"), None
+        return post(container({"ig_user_id": IG_USER_ID, "media_type": "STORIES", "image_url": urls[0]})), None
     if it["type"] == "IMAGE":
-        ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA",
-                           {"ig_user_id": IG_USER_ID, "image_url": urls[0], "caption": caption})
-        if not ok: raise RuntimeError(f"container: {str(raw)[:300]}")
-        creation = d.get("id")
-    else:
-        children = []
-        for u in urls:
-            ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA",
-                               {"ig_user_id": IG_USER_ID, "image_url": u, "is_carousel_item": True})
-            if not ok: raise RuntimeError(f"child: {str(raw)[:300]}")
-            children.append(d.get("id"))
-        ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA",
-                           {"ig_user_id": IG_USER_ID, "media_type": "CAROUSEL",
-                            "children": children, "caption": caption})
-        if not ok: raise RuntimeError(f"carousel: {str(raw)[:300]}")
-        creation = d.get("id")
-    time.sleep(5)
-    ok,d,raw = execute("INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH",
-                       {"ig_user_id": IG_USER_ID, "creation_id": creation})
-    if not ok: raise RuntimeError(f"publish: {str(raw)[:300]}")
-    mid = d.get("id")
-    ok,d2,_ = execute("INSTAGRAM_GET_IG_MEDIA", {"ig_media_id": mid, "fields": "permalink"})
-    return mid, (d2 or {}).get("permalink")
+        return post(container({"ig_user_id": IG_USER_ID, "image_url": urls[0], "caption": caption})), None
+    # CAROUSEL
+    children = [container({"ig_user_id": IG_USER_ID, "image_url": u, "is_carousel_item": True}) for u in urls]
+    ok, d, raw = execute("INSTAGRAM_CREATE_CAROUSEL_CONTAINER",
+                         {"ig_user_id": IG_USER_ID, "children": children, "caption": caption})
+    if not ok: raise RuntimeError(f"carousel: {str(raw)[:300]}")
+    return post(d.get("id")), None
 
 def main():
     if not KEY: raise SystemExit("COMPOSIO_API_KEY not set")
@@ -82,8 +69,9 @@ def main():
     if not due: print("nothing due at", now.isoformat()); return
     it = due[0]; print("publishing", it["id"], it["type"])
     mid, link = publish_item(it)
-    it["status"], it["media_id"], it["permalink"] = "DONE", mid, link
+    it["status"], it["media_id"] = "DONE", mid
+    if link: it["permalink"] = link
     json.dump(sched, open(SCHED,"w"), indent=2)
-    print("PUBLISHED", it["id"], "->", link)
+    print("PUBLISHED", it["id"], "->", mid)
 
 if __name__ == "__main__": main()
