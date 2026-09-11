@@ -23,7 +23,8 @@
     "image_urls": [
       "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p02_contact_door_1.jpg"
     ],
-    "status": "PENDING"
+    "status": "DONE",
+    "media_id": "17944259772071011"
   },
   {
     "id": "p03_card",
