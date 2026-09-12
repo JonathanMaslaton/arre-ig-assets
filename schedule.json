@@ -154,7 +154,8 @@
     "image_urls": [
       "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/st_quotecalm.jpg"
     ],
-    "status": "PENDING"
+    "status": "DONE",
+    "media_id": "17902109013579382"
   },
   {
     "id": "st_tempknow",
