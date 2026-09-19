@@ -179,7 +179,8 @@
     "image_urls": [
       "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/st_nyc.jpg"
     ],
-    "status": "PENDING"
+    "status": "DONE",
+    "media_id": "18111824579027554"
   },
   {
     "id": "st_quotetech",
