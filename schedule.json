@@ -93,7 +93,8 @@
     "image_urls": [
       "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/p08_nfc_desk_1.jpg"
     ],
-    "status": "PENDING"
+    "status": "DONE",
+    "media_id": "17960685831250134"
   },
   {
     "id": "p09_calmcosts",
