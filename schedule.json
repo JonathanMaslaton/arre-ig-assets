@@ -192,7 +192,8 @@
     "image_urls": [
       "https://raw.githubusercontent.com/JonathanMaslaton/arre-ig-assets/main/img/st_quotetech.jpg"
     ],
-    "status": "PENDING"
+    "status": "DONE",
+    "media_id": "18417840418152396"
   },
   {
     "id": "st_qr",
